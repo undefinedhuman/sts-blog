@@ -4,9 +4,34 @@
   "description": "A private blog in which I document the results of my research on stock markets and various investment strategies.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/node.js"
+    "start": "node src/node.js",
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
-  "keywords": ["Blog", "STS", "Research", "Stock markets", "Investment", " Investment strategies", "Economics"],
+  "keywords": [
+    "Blog",
+    "STS",
+    "Research",
+    "Stock markets",
+    "Investment",
+    "Investment strategies",
+    "Economics"
+  ],
   "author": "Alexander Padberg <undefinedhuman>",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!data/keyMap.js",
+      "!/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.11",
+    "jest": "^25.3.0",
+    "@types/jest": "^25.2.1"
+  },
+  "dependencies": {
+    "npm": "^6.14.4"
+  }
 }
