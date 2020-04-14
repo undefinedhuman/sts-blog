@@ -49,10 +49,10 @@ npm run start
 ## Testing
 
 ```sh
-# Run tests
+# Run all test suites
 npm run test
 
-# Run tests with printed coverage
+# Run all test suites and see coverage
 npm run test --coverage
 ```
 
