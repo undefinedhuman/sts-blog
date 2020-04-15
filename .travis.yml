@@ -1,7 +1,14 @@
 language: node_js
 node_js:
-  - '12'
+  - '13'
+services:
+  - docker
 install:
-  - 'npm i'
+  - 'npm ci'
 script:
-  - npm run coveralls
+  - npm run test-coverage
+deploy:
+    provider: script
+    script: bash scripts/deploy.sh
+    on:
+      branch: master
