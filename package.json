@@ -2,7 +2,7 @@
   "name": "sts-blog",
   "version": "0.0.1",
   "description": "A private blog in which I document the results of my research on stock markets and various investment strategies.",
-  "main": "src/index.js",
+  "main": "src/server/index.js",
   "scripts": {
     "start": "node src/node.js",
     "test": "jest",
