@@ -32,7 +32,7 @@
 
 ## Installation
 
-> This guide assumes you already have Node.js and npm installed.
+> This guideline assumes you already have Node.js and npm installed.
 
 ```sh
 git clone https://github.com/undefinedhuman/sts-blog.git
