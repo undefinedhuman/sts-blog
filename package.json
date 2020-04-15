@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server/index.js",
     "test": "jest",
-    "coverage-test": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "test-coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "version": "echo $npm_package_version"
   },
   "keywords": [
