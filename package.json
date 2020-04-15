@@ -4,7 +4,7 @@
   "description": "A private blog in which I document the results of my research on stock markets and various investment strategies.",
   "main": "src/server/index.js",
   "scripts": {
-    "start": "node src/node.js",
+    "start": "node src/server/index.js",
     "test": "jest",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
