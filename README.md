@@ -51,9 +51,6 @@ npm run start
 ```sh
 # Run all test suites
 npm run test
-
-# Run all test suites and see coverage
-npm run test --coverage
 ```
 
 ## Author
