@@ -51,9 +51,6 @@ npm run start
 ```sh
 # Run all test suites
 npm run test
-
-# Run all test suites and see coverage
-npm run test --coverage
 ```
 
 ## Author
@@ -62,10 +59,6 @@ npm run test --coverage
 
 * Website: https://github.com/undefinedhuman
 * GitHub: [@undefinedhuman](https://github.com/undefinedhuman)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
 
 ## License
 
