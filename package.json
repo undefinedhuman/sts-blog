@@ -6,8 +6,8 @@
   "scripts": {
     "commit": "git-cz",
     "start": "node src/server/index.js",
-    "test": "jest --config --coverage",
-    "test-coverage": "jest --config --coverage && cat ./coverage/lcov.info | coveralls",
+    "test": "jest --config=jest.json --coverage",
+    "test-coverage": "jest --config=jest.json --coverage && cat ./coverage/lcov.info | coveralls",
     "version": "echo $npm_package_version"
   },
   "keywords": [
