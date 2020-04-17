@@ -60,10 +60,6 @@ npm run test
 * Website: https://github.com/undefinedhuman
 * GitHub: [@undefinedhuman](https://github.com/undefinedhuman)
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
 ## License
 
 Copyright © 2020 [Alexander Padberg <undefinedhuman>](https://github.com/undefinedhuman).<br />
