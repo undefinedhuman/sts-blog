@@ -8,7 +8,7 @@ install:
 script:
   - npm run test-coverage
 before_deploy:
-  - git remote add origin \"https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blog.git\" > /dev/null 2>&1
+  - git remote add origin "https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blog.git\"
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
   - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" 1>/dev/null
