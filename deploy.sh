@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+$ npm run changelog
+wait
+
 IMAGE="undefinedhuman/sts-blog"
 TAG=$(npm --loglevel silent run version)
 
