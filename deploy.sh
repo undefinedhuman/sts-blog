@@ -8,8 +8,8 @@ npm run changelog
 wait
 
 git remote add origin "https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blog.git" > /dev/null 2>&1
-git push --quiet --set-upstream origin master
-git push --tags
+git push -u origin master
+git push origin --tags
 
 ${GITHUB_TOKEN}
 
