@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-$ npm run changelog
+npm run changelog
 wait
 
 IMAGE="undefinedhuman/sts-blog"
