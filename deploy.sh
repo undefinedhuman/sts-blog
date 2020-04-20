@@ -1,8 +1,17 @@
 #!/bin/sh
 set -e
 
+git config --global user.email "travis@travis-ci.org"
+git config --global user.name "Travis CI"
+
 npm run changelog
 wait
+
+git remote add origin "https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blog.git" > /dev/null 2>&1
+git push --quiet --set-upstream origin master
+git push --tags
+
+${GITHUB_TOKEN}
 
 IMAGE="undefinedhuman/sts-blog"
 TAG=$(npm --loglevel silent run version)

@@ -76,5 +76,3 @@ fs.writeFileSync("./CHANGELOG.md", `${changelog}${currentChangelog}`);
 
 child_process.execSync("git add .")
 child_process.execSync("git commit --amend --no-edit")
-child_process.execSync("git push origin master")
-child_process.execSync("git push origin --tags")
