@@ -16,5 +16,7 @@ before_deploy:
 deploy:
     provider: script
     script: bash deploy.sh
+    tags:
+      enabled: false
     on:
       branch: master

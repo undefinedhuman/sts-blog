@@ -4,7 +4,7 @@ const fs = require("fs");
 const repo_link = "https://github.com/undefinedhuman/sts-blog/"
 
 const commitLog = child_process
-    .execSync(`git log ${child_process.execSync('git describe --tags').toString('utf-8').split('-')[0]}...HEAD --reverse --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
+    .execSync(`git log ${child_process.execSync('git describe --tags $(git rev-list --tags --max-count=1)').toString('utf-8')}...HEAD --reverse --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
     .toString('utf-8')
     .split("---COMMIT---")
     .map(commit => {
