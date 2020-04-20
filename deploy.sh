@@ -11,8 +11,6 @@ git remote add origin "https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blo
 git push -u origin master
 git push origin --tags
 
-${GITHUB_TOKEN}
-
 IMAGE="undefinedhuman/sts-blog"
 TAG=$(npm --loglevel silent run version)
 
