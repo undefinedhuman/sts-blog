@@ -4,6 +4,8 @@ node_js:
 services:
   - docker
 install:
+  - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" 1>/dev/null
+  - git fetch origin -q
   - 'npm ci'
 script:
   - npm run test-coverage
