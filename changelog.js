@@ -38,7 +38,8 @@ commitLog.forEach(commit => {
 
 const version = child_process.execSync("npm --loglevel silent run version");
 
-child_process.execSync("git checkout master")
+child_process.execSync(`git remote add origin \"https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blog.git\" > /dev/null 2>&1`)
+child_process.execSync(`git checkout master`)
 child_process.execSync(`git add .`)
 child_process.execSync(`git commit -m "chore(version): Bump to ${version}"`)
 child_process.execSync(`git tag -am "Tag for ${version}" ${version}`)
@@ -76,5 +77,5 @@ fs.writeFileSync("./CHANGELOG.md", `${changelog}${currentChangelog}`);
 
 child_process.execSync("git add .")
 child_process.execSync("git commit --amend --no-edit")
-
-child_process.execSync("echo Test")
+child_process.execSync("git push -u origin master")
+child_process.execSync("git push --tags")
