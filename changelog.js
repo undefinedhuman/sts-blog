@@ -73,9 +73,21 @@ commitTypes.forEach(commitType => {
     changelog += "\n"
 })
 
+const currentReadMe = fs.readFileSync("./README.md", "utf-8")
+let newReadMe = "";
+
+currentReadMe
+    .split("\n")
+    .forEach(line => {
+        if(line.startsWith('  <img alt=\"Version\"'))
+            line = line.replace(line, `  <img alt="Version" src="https://img.shields.io/badge/version-${version}-blue.svg?cacheSeconds=2592000" /> `)
+        newReadMe += line + "\n"
+    })
+
 fs.writeFileSync("./CHANGELOG.md", `${changelog}${currentChangelog}`);
+fs.writeFileSync("./README.md", `${newReadMe}`)
 
 child_process.execSync("git add .")
-child_process.execSync(`git commit -m "Update changelog [ci skip]"`)
+child_process.execSync(`git commit -m "Update changelog and readme [ci skip]"`)
 child_process.execSync("git push changelog --tags")
 child_process.execSync("git push -u changelog master")
