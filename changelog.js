@@ -4,7 +4,7 @@ const fs = require("fs");
 const repo_link = "https://github.com/undefinedhuman/sts-blog/"
 
 const commitLog = child_process
-    .execSync(`git log ${child_process.execSync('git describe --tags `git rev-list --tags --max-count=1`').toString('utf-8').replace("\n", "")}...HEAD --reverse --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
+    .execSync(`git log ${child_process.execSync('git describe --tags `git rev-list --tags --max-count=1`').toString('utf-8').replace("\n", "")}...HEAD --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
     .toString('utf-8')
     .split("---COMMIT---")
     .map(commit => {
@@ -36,7 +36,7 @@ commitLog.forEach(commit => {
     })
 });
 
-const version = child_process.execSync("npm --loglevel silent run version");
+const version = child_process.execSync("npm --loglevel silent run version").toString("utf-8").replace("\n", "");
 
 child_process.execSync(`git checkout master`)
 child_process.execSync(`git add .`)
@@ -78,4 +78,3 @@ fs.writeFileSync("./CHANGELOG.md", `${changelog}${currentChangelog}`);
 child_process.execSync("git add .")
 child_process.execSync("git commit --amend --no-edit")
 child_process.execSync("git push -u changelog master")
-child_process.execSync("git push changelog --tags")
