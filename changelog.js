@@ -40,7 +40,7 @@ const version = child_process.execSync("npm --loglevel silent run version").toSt
 
 child_process.execSync(`git checkout master`)
 child_process.execSync(`git add .`)
-child_process.execSync(`git commit -m "chore(version): Bump to ${version}"`)
+child_process.execSync(`git commit -m "Bump to ${version} [ci skip]"`)
 child_process.execSync(`git tag -am "Tag for v${version}" v${version}`)
 
 const versionCommit = child_process
@@ -76,6 +76,6 @@ commitTypes.forEach(commitType => {
 fs.writeFileSync("./CHANGELOG.md", `${changelog}${currentChangelog}`);
 
 child_process.execSync("git add .")
-child_process.execSync("git commit --amend --no-edit")
+child_process.execSync(`git commit commit -m "Update changelog [ci skip]"`)
 child_process.execSync("git push changelog --tags")
 child_process.execSync("git push -u changelog master")
