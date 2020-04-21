@@ -1,3 +1,11 @@
+# Version 0.1.12 (Tuesday, Apr 21, 2020, 12:04 PM)
+
+## Fixed
+- fix travis credentials ([587e1a1](https://github.com/undefinedhuman/sts-blog//commit/587e1a1f44991994dff379b56490fed05f0cd691))
+
+## Miscellaneous
+- Bump to 0.1.12 ([1c2f0a5](https://github.com/undefinedhuman/sts-blog//commit/1c2f0a5cc80631289e58e09160fedd9d8fd3a290))
+
 # Version 0.1.11 (Tuesday, Apr 21, 2020, 11:53 AM)
 
 ## Added
