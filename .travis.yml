@@ -9,14 +9,13 @@ script:
   - npm run test-coverage
 before_deploy:
   - git remote add changelog https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blog.git
-  - git config --global user.email "travis@travis-ci.org"
-  - git config --global user.name "Travis CI"
   - git config --global push.followTags true
   - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" 1>/dev/null
   - git fetch origin -q
 deploy:
     provider: script
     script: bash deploy.sh
+    skip_cleanup: true
     on:
       tags: false
       branch: master
