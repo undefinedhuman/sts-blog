@@ -4,7 +4,7 @@ const fs = require("fs");
 const repo_link = "https://github.com/undefinedhuman/sts-blog/"
 
 const commitLog = child_process
-    .execSync(`git log ${child_process.execSync('git describe --tags $(git rev-list --tags --max-count=1)').toString('utf-8')}...HEAD --reverse --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
+    .execSync(`git log ${child_process.execSync('git describe --tags `git rev-list --tags --max-count=1`').toString('utf-8').replace("\n", "")}...HEAD --reverse --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
     .toString('utf-8')
     .split("---COMMIT---")
     .map(commit => {
@@ -41,7 +41,7 @@ const version = child_process.execSync("npm --loglevel silent run version");
 child_process.execSync(`git checkout master`)
 child_process.execSync(`git add .`)
 child_process.execSync(`git commit -m "chore(version): Bump to ${version}"`)
-child_process.execSync(`git tag -am "Tag for ${version}" ${version}`)
+child_process.execSync(`git tag -am "Tag for v${version}" v${version}`)
 
 const versionCommit = child_process
     .execSync(`git log HEAD~1...HEAD --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
@@ -78,4 +78,4 @@ fs.writeFileSync("./CHANGELOG.md", `${changelog}${currentChangelog}`);
 child_process.execSync("git add .")
 child_process.execSync("git commit --amend --no-edit")
 child_process.execSync("git push -u changelog master")
-child_process.execSync("git push -u changelog --tags")
+child_process.execSync("git push changelog --tags")
