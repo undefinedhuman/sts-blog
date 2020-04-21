@@ -4,7 +4,7 @@ const fs = require("fs");
 const repo_link = "https://github.com/undefinedhuman/sts-blog/"
 
 const commitLog = child_process
-    .execSync(`git log ${child_process.execSync('git describe --tags `git rev-list --tags --max-count=1`').toString('utf-8').replace("\n", "")}...HEAD --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
+    .execSync(`git log ${child_process.execSync('git describe --tags `git rev-list --tags --max-count=1`').toString('utf-8').replace("\n", "")}...HEAD --reverse --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
     .toString('utf-8')
     .split("---COMMIT---")
     .map(commit => {
@@ -40,7 +40,7 @@ const version = child_process.execSync("npm --loglevel silent run version").toSt
 
 child_process.execSync(`git checkout master`)
 child_process.execSync(`git add .`)
-child_process.execSync(`git commit -m "Bump to ${version} [ci skip]"`)
+child_process.execSync(`git commit -m "chore(version): Bump to ${version} [ci skip]"`)
 child_process.execSync(`git tag -am "Tag for v${version}" v${version}`)
 
 const versionCommit = child_process
