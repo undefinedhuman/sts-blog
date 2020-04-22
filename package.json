@@ -2,11 +2,11 @@
   "name": "sts-blog",
   "version": "0.1.12",
   "description": "A private blog in which I document the results of my research on stock markets and various investment strategies.",
-  "main": "src/server/index.js",
+  "main": "app.js",
   "scripts": {
     "commit": "git-cz",
-    "start": "node src/server/index.js",
-    "dev": "nodemon -q src/server/index.js",
+    "start": "node app.js",
+    "dev": "nodemon -q app.js",
     "test": "jest --config=jest.json --coverage",
     "test-coverage": "jest --config=jest.json --coverage && cat ./coverage/lcov.info | coveralls",
 
