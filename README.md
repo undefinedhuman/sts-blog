@@ -55,10 +55,7 @@ npm run test
 
 ## Author
 
-**Alexander Padberg**
-
-* Website: https://github.com/undefinedhuman
-* GitHub: [@undefinedhuman](https://github.com/undefinedhuman)
+**[Alexander Padberg](https://github.com/undefinedhuman)**
 
 ## License
 
