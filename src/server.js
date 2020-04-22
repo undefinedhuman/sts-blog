@@ -1,9 +1,9 @@
 const express = require("express")
-const path = require('path')
+const path = require("path")
 
 const app = express()
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.get('/', function (req, res) {
     res.json('Basic get request, response in json!')
@@ -19,6 +19,10 @@ app.put('/entry', function (req, res) {
 
 app.delete('/entry', function (req, res) {
     res.json('Basic delete request, response in json!')
+})
+
+app.use(function (req, res, next) {
+    res.status(404).send("Sorry can't find that!")
 })
 
 module.exports = app
