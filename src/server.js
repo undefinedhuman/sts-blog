@@ -6,13 +6,18 @@ const bodyParser = require("body-parser")
 const app = express()
 
 mongoose
-    .connect('mongodb://localhost',)
-    .then(() => { console.log('Connected successfully!'); })
-    .catch((err) => { throw err })
+    .connect('mongodb://localhost/sts_blog', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(
+        err => { throw err },
+        () => { console.log('Connected successfully!') }
+    )
 
 app.use(express.static(path.join(__dirname, "../public")))
 
-app.use(bodyParser.urlencoded({ extended: true }))#
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
