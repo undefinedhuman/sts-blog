@@ -1,21 +1,24 @@
-let mongoose = require("mongoose")
+let mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
 let ArticleSchema = new Schema({
+    _id: {
+        type: mongoose.Schema.Types.ObjectId
+    },
     title: {
         type: String,
-        required: "Please insert a title"
+        required: true
     },
     body: {
         type: String,
-        required: "Please insert a body"
+        required: true
     },
-    date: {
+    created: {
         type: Date,
-        default: new Date
+        default: Date.now
     }
-})
+});
 
-let Article = mongoose.model('article', ArticleSchema)
+let Article = mongoose.model('Article', ArticleSchema);
 
 module.exports = Article
