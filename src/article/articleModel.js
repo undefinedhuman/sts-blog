@@ -2,9 +2,6 @@ let mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
 let ArticleSchema = new Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId
-    },
     title: {
         type: String,
         required: true

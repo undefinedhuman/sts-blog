@@ -1,10 +1,10 @@
-let Article = require('articleModel');
+let Article = require('./articleModel');
 
 module.exports.createArticle = (req, res) => {
     new Article(req.body).save((err, article) => {
-        if (err) res.send(err);
+        if (err) { res.send(err); }
         res.json(article);
-    }).then();
+    });
 };
 
 module.exports.getArticleByID = (req, res) => {
