@@ -1,12 +1,12 @@
 {
   "name": "sts-blog",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "A private blog in which I document the results of my research on stock markets and various investment strategies.",
   "main": "app.js",
   "scripts": {
     "commit": "git-cz",
-    "start": "node server.js",
-    "dev": "nodemon -q server.js",
+    "start": "node app.js",
+    "dev": "nodemon -q app.js",
     "test": "jest --config=jest.json --coverage",
     "test-coverage": "jest --config=jest.json --coverage && cat ./coverage/lcov.info | coveralls",
     "version": "echo $npm_package_version",

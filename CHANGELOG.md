@@ -1,3 +1,11 @@
+# Version 0.10.1 (Thursday, Apr 30, 2020, 04:02 PM)
+
+## Fixed
+- fix deploy command for starting server ([ded065c](https://github.com/undefinedhuman/sts-blog//commit/ded065c684f1537cf8cdd48806c998849b038031))
+
+## Miscellaneous
+- Bump to 0.10.1 ([ecb4245](https://github.com/undefinedhuman/sts-blog//commit/ecb42457b9359840ab40c6b40e9e166b60110297))
+
 # Version 0.10.0 (Thursday, Apr 30, 2020, 03:40 PM)
 
 ## Added
