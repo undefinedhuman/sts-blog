@@ -1,3 +1,11 @@
+# Version 0.10.3 (Thursday, Apr 30, 2020, 04:36 PM)
+
+## Fixed
+- add docker compose ([26a9734](https://github.com/undefinedhuman/sts-blog//commit/26a973408909e2c54a8b1ee2f9425e46898bb982))
+
+## Miscellaneous
+- Bump to 0.10.3 ([68dc21a](https://github.com/undefinedhuman/sts-blog//commit/68dc21af7c77d0a3000ff2171449beefb8e329b6))
+
 # Version 0.10.2 (Thursday, Apr 30, 2020, 04:18 PM)
 
 ## Changed
