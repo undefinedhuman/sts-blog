@@ -1,3 +1,14 @@
+# Version 0.10.7 (Thursday, Apr 30, 2020, 05:07 PM)
+
+## Fixed
+- fix database connection issue during deploy ([b65e083](https://github.com/undefinedhuman/sts-blog//commit/b65e083d9ca5e11d91747b2bd0addf4ca62ee35b))
+- fix mongodb download command during deploy ([0b4783e](https://github.com/undefinedhuman/sts-blog//commit/0b4783e96f0fd572b73d9098475bf4beabf069be))
+- fix mongodb connection issue hopefully ([95d8860](https://github.com/undefinedhuman/sts-blog//commit/95d886000adc4223357ee0fb19d921f1b32eb76e))
+- add sleep time before connectin to mongo ([f4e08e7](https://github.com/undefinedhuman/sts-blog//commit/f4e08e77244277d803ffe253bc91680d1f0e892f))
+
+## Miscellaneous
+- Bump to 0.10.7 ([40c1ea3](https://github.com/undefinedhuman/sts-blog//commit/40c1ea3998469bedaa3eb73fdab2fb73cad9a24b))
+
 # Version 0.10.3 (Thursday, Apr 30, 2020, 04:36 PM)
 
 ## Fixed
