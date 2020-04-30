@@ -1,3 +1,14 @@
+# Version 0.10.2 (Thursday, Apr 30, 2020, 04:18 PM)
+
+## Changed
+- add mongodb service for ci ([4f160d6](https://github.com/undefinedhuman/sts-blog//commit/4f160d60c3879f184e0c61105f943c06f68392fa))
+
+## Fixed
+- fix databse command during deployment ([9f288d8](https://github.com/undefinedhuman/sts-blog//commit/9f288d85db6422da2b142d74530f4e3783877cc6))
+
+## Miscellaneous
+- Bump to 0.10.2 ([356f094](https://github.com/undefinedhuman/sts-blog//commit/356f0946439d2fdcafcd196e6b8032b03bb46db5))
+
 # Version 0.10.1 (Thursday, Apr 30, 2020, 04:02 PM)
 
 ## Fixed

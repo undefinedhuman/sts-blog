@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to sts-blog 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.10.1-blue.svg?cacheSeconds=2592000" /> 
+  <img alt="Version" src="https://img.shields.io/badge/version-0.10.2-blue.svg?cacheSeconds=2592000" /> 
   <img src="https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg"  alt="Npm Version"/>
   <img src="https://img.shields.io/badge/node-%3E%3D9.3.0-blue.svg"  alt="Node Version"/>
   <a href="https://github.com/undefinedhuman/sts-blog" target="_blank">
@@ -61,4 +61,5 @@ npm run test
 
 Copyright © 2020 [Alexander Padberg <undefinedhuman>](https://github.com/undefinedhuman).<br />
 This project is [ISC](https://github.com/undefinedhuman/sts-blog/blob/master/LICENSE) licensed.
+
 
