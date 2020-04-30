@@ -16,6 +16,7 @@ before_deploy:
   - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" 1>/dev/null
   - git fetch origin -q
   - sleep 15
+  - mongod --bind_ip_all
   - mongo sts_blog --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 deploy:
     provider: script
