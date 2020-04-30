@@ -1,5 +1,4 @@
 language: node_js
-sudo: false
 node_js:
   - '13'
 services:
@@ -9,9 +8,6 @@ install:
   - npm ci
 script:
   - npm run test-coverage
-env:
-    global:
-      - MONGODB_VERSION=4.2
 before_deploy:
   - git remote add changelog https://${GITHUB_TOKEN}@github.com/undefinedhuman/sts-blog.git
   - git config --global user.email "travis@travis-ci.com"
@@ -19,12 +15,7 @@ before_deploy:
   - git config --global push.followTags true
   - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" 1>/dev/null
   - git fetch origin -q
-  - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-$MONGODB_VERSION.tgz
-  - tar xfz mongodb-linux-x86_64-$MONGODB_VERSION.tgz
-  - export PATH=`pwd`/mongodb-linux-x86_64-$MONGODB_VERSION/bin:$PATH
-  - mkdir -p data/db
-  - mongod --dbpath=data/db &
-  - sleep 3
+  - mongo sts_blog --eval 'db.createUser({user:'travis',pwd:'test',roles:['readWrite']});'
 deploy:
     provider: script
     script: bash deploy.sh
