@@ -1,3 +1,26 @@
+# Version 0.10.0 (Thursday, Apr 30, 2020, 03:40 PM)
+
+## Added
+- add basic express functionality ([1a549df](https://github.com/undefinedhuman/sts-blog//commit/1a549df0e9a74c54c5fa1dde1a1f334181b400e9))
+- add basic CRUD endpoints ([38a3b8a](https://github.com/undefinedhuman/sts-blog//commit/38a3b8a081727f8dc798f54cada66054d605213b))
+- add basic routing and first static site ([9dd6478](https://github.com/undefinedhuman/sts-blog//commit/9dd6478fce0152155fc5d0e4767b70b272d8bd84))
+- correct error and static page handling ([171a505](https://github.com/undefinedhuman/sts-blog//commit/171a505ed67b3e81c668a64f930bfda34ff82471))
+- add connection to local database ([4e05c87](https://github.com/undefinedhuman/sts-blog//commit/4e05c874c4df0bd2253d5b73e1bcb1112c4a8e54))
+- add mongodb connection through mongoose ([fdd1870](https://github.com/undefinedhuman/sts-blog//commit/fdd1870fd3071cc51cc810010dd8c181b34b5a9f))
+- add basic article mongoose model ([e325808](https://github.com/undefinedhuman/sts-blog//commit/e325808897f0c14f5d2e35a09a5c7474a8783a6e))
+- add basic CRUD controller for articles ([7ee1ab3](https://github.com/undefinedhuman/sts-blog//commit/7ee1ab34511b91808efbfabeb41a559978a23688))
+- add article controller ([2dce6ab](https://github.com/undefinedhuman/sts-blog//commit/2dce6abfe9d1af42f0e389e80ca7ccbfc09961e4))
+
+## Changed
+- add updating functionality for readme version ([2b091c7](https://github.com/undefinedhuman/sts-blog//commit/2b091c75d990e1563c7c9a65d76fd58b6a3a8c62))
+- split init and start of server for test ([19b7ef5](https://github.com/undefinedhuman/sts-blog//commit/19b7ef5c3c8a50abd717f6f8f1582bcb1d9a6c53))
+- update mongoose article model export ([f65567e](https://github.com/undefinedhuman/sts-blog//commit/f65567ebeb002bec8e73b980488689296fb890c0))
+
+## Miscellaneous
+- install express package ([35f5d5b](https://github.com/undefinedhuman/sts-blog//commit/35f5d5b2cd60d9ebeb457d890d6463f21a067af0))
+- update author section ([60ddbda](https://github.com/undefinedhuman/sts-blog//commit/60ddbda09f87a296b021b8f3de7a6bfc29478c8d))
+- Bump to 0.10.0 ([26c0e1c](https://github.com/undefinedhuman/sts-blog//commit/26c0e1c98a696b5d356ff171e6fd96f4746110c0))
+
 # Version 0.1.12 (Tuesday, Apr 21, 2020, 12:04 PM)
 
 ## Fixed
