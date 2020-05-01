@@ -1,6 +1,6 @@
 {
   "name": "sts-blog",
-  "version": "0.10.7",
+  "version": "0.10.9",
   "description": "A private blog in which I document the results of my research on stock markets and various investment strategies.",
   "main": "app.js",
   "scripts": {

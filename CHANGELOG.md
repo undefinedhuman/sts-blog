@@ -1,3 +1,12 @@
+# Version 0.10.9 (Thursday, Apr 30, 2020, 05:27 PM)
+
+## Fixed
+- allow all ip to access mongo in deploy ([5339abc](https://github.com/undefinedhuman/sts-blog//commit/5339abcbc90995e0a363f5325bcbfbaab385b390))
+- remove access of all ips from mongo ([3af5f7a](https://github.com/undefinedhuman/sts-blog//commit/3af5f7a3b28480320620e2040a05a70efc80f819))
+
+## Miscellaneous
+- Bump to 0.10.9 ([5b845a3](https://github.com/undefinedhuman/sts-blog//commit/5b845a36c4cc1435642a23de6434b0f1d93af717))
+
 # Version 0.10.7 (Thursday, Apr 30, 2020, 05:07 PM)
 
 ## Fixed
