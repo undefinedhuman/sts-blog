@@ -1,3 +1,11 @@
+# Version 0.10.10 (Friday, May 1, 2020, 04:01 PM)
+
+## Fixed
+- fix build and run during ci ([695954c](https://github.com/undefinedhuman/sts-blog//commit/695954c652eb557c3522d61bd788cfdc4469733b))
+
+## Miscellaneous
+- Bump to 0.10.10 ([0278a77](https://github.com/undefinedhuman/sts-blog//commit/0278a77a6e598fe856d3793e71365bb338063eae))
+
 # Version 0.10.9 (Thursday, Apr 30, 2020, 05:27 PM)
 
 ## Fixed
