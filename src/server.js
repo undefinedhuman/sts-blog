@@ -8,7 +8,7 @@ const apiRouter = require("./routes/api")
 const app = express();
 
 mongoose
-    .connect('mongodb://localhost/sts_blog', {
+    .connect('mongodb://mongodb:27017/sts_blog', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })

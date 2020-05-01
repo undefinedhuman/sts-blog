@@ -3,7 +3,6 @@ node_js:
   - '13'
 services:
   - docker
-  - mongodb
 install:
   - npm ci
 script:
@@ -15,8 +14,6 @@ before_deploy:
   - git config --global push.followTags true
   - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" 1>/dev/null
   - git fetch origin -q
-  - sleep 15
-  - mongo sts_blog --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 deploy:
     provider: script
     script: bash deploy.sh
