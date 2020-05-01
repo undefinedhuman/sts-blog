@@ -1,3 +1,11 @@
+# Version 0.10.13 (Friday, May 1, 2020, 04:41 PM)
+
+## Fixed
+- fix website title to test ci/cd ([7897700](https://github.com/undefinedhuman/sts-blog//commit/78977003f758cdce3bbe1eb452cbaa25a4a74eaf))
+
+## Miscellaneous
+- Bump to 0.10.13 ([97808fd](https://github.com/undefinedhuman/sts-blog//commit/97808fd47f96da22066f6de49a57748c7897569d))
+
 # Version 0.10.12 (Friday, May 1, 2020, 04:36 PM)
 
 ## Changed
