@@ -1,3 +1,11 @@
+# Version 0.10.11 (Friday, May 1, 2020, 04:14 PM)
+
+## Fixed
+- update mongodb databse url ([0745df4](https://github.com/undefinedhuman/sts-blog//commit/0745df4afb4d0fe3ba17a1a342d2662c45916b92))
+
+## Miscellaneous
+- Bump to 0.10.11 ([35e1cd9](https://github.com/undefinedhuman/sts-blog//commit/35e1cd90ad257dffc30e56f0bf941e71b4c89df2))
+
 # Version 0.10.10 (Friday, May 1, 2020, 04:01 PM)
 
 ## Fixed
