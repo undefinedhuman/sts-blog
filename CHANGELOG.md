@@ -1,3 +1,14 @@
+# Version 0.10.12 (Friday, May 1, 2020, 04:36 PM)
+
+## Changed
+- update html site title ([6ab34cf](https://github.com/undefinedhuman/sts-blog//commit/6ab34cf1a526d73f82f4912250fa577f06e8a049))
+
+## Fixed
+- fix website title back to previous ([4c721fa](https://github.com/undefinedhuman/sts-blog//commit/4c721fa992b4abca935898875dadaa007e8d8084))
+
+## Miscellaneous
+- Bump to 0.10.12 ([62667e2](https://github.com/undefinedhuman/sts-blog//commit/62667e2ebecfff26c2491a7c224b6f5ed188d394))
+
 # Version 0.10.11 (Friday, May 1, 2020, 04:14 PM)
 
 ## Fixed
