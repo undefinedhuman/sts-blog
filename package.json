@@ -1,9 +1,10 @@
 {
   "name": "sts-blog",
   "version": "0.10.13",
-  "description": "A private blog in which I document the results of my research on stock markets and various investment strategies.",
+  "description": "A private blog where I document the results of my research on stock markets and various investment strategies.",
   "main": "app.js",
   "scripts": {
+    "scss": "node-sass --watch public/stylesheets -o public/stylesheets/css",
     "commit": "git-cz",
     "start": "node app.js",
     "dev": "nodemon -q app.js",
@@ -38,7 +39,8 @@
     "coveralls": "^3.0.11",
     "cz-conventional-changelog": "^3.1.0",
     "jest": "^25.3.0",
-    "@types/jest": "^25.2.1"
+    "@types/jest": "^25.2.1",
+    "node-sass": "^4.14.1"
   },
   "config": {
     "commitizen": {

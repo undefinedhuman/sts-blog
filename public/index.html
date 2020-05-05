@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="de-DE">
+<html lang="en">
 <head>
     <title>Sts Blog</title>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="author" content="Alexander Padberg <undefinedhuman>">
     <meta name="description" content="A private blog in which I document the results of my research on stock markets and various investment strategies.">
     <meta name="keywords" content="STS, Investment, Economics, Blog, Research, Stock markets, Investment strategies">
 
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <div id="root"></div>
+    <section class="navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">BlogSTS</a>
+            </div>
+            <nav>
+                <!-- Animated Hamburger Icon => https://codepen.io/elijahmanor/pen/Igpoe -->
+                <div class="nav-responsive"><a id="nav-toggle" href="#"><span></span></a></div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
+    <script src="javascript/navigation.js"></script>
     <script src="javascript/script.js"></script>
 </body>
 </html>
