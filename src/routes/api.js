@@ -10,7 +10,7 @@ router
 router
     .route("/articles/:articleID")
     .get(article.getArticleByID)
-    .put(article.deleteArticle)
-    .delete(article.updateArticle)
+    .put(article.updateArticle)
+    .delete(article.deleteArticle)
 
 module.exports = router;
