@@ -3,7 +3,7 @@ const express = require("express")
 const router = express.Router();
 
 router
-    .route("/articles")
+    .route("/articles/")
     .get(article.getAllArticles)
     .post(article.createArticle)
 
