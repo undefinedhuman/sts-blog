@@ -26,15 +26,11 @@ app.use(bodyParser.json());
 app.use('/api', apiRouter)
 
 app.use((req, res, next) => {
-    res.status(404).json({
-        message: `Sorry can't find ${res.originalUrl}!`
-    })
+    res.status(404).send(`Sorry can't find ${res.originalUrl}!`)
 });
 
 app.use((err, req, res, next) => {
-    res.status(500).json({
-        message: `Error: ${err}`
-    })
+    res.status(500).send(`Error: ${err}`);
 });
 
 module.exports = app
