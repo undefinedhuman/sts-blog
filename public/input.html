@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Sts Blog</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,9 +11,10 @@
     <meta name="keywords" content="STS, Investment, Economics, Blog, Research, Stock markets, Investment strategies">
 
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/input.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
-<body>
+<body class="input-body">
     <section class="navigation">
         <div class="nav-container">
             <div class="logo">
@@ -29,13 +32,23 @@
         </div>
     </section>
 
-    <div id="root"></div>
+    <div class="input">
+        <form id="submitArticle" class="form">
+            <label>
+                Title
+                <input id="title" type="text" placeholder="Enter article title" name="title" required>
+            </label>
 
-    <button class="add-button">
-        <a href="input.html">ADD</a>
-    </button>
+            <label>
+                Body
+                <textarea id="body" placeholder="Enter article Body" name="body" required></textarea>
+            </label>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
     <script src="javascript/navigation.js"></script>
-    <script src="javascript/script.js"></script>
+    <script src="javascript/input.js"></script>
 </body>
 </html>
