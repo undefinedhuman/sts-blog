@@ -1,3 +1,25 @@
+# Version 0.17.0 (Thursday, May 7, 2020, 07:13 PM)
+
+## Added
+- add basic frontend file structure ([f731e74](https://github.com/undefinedhuman/sts-blog//commit/f731e742782b5358082893a9085359e02dc0cca2))
+- add mobile responsive navigation bar ([15e9959](https://github.com/undefinedhuman/sts-blog//commit/15e99591a84e0f79bee379ba977de78f05ace016))
+- add basic article mvc pattern ([e66d6fc](https://github.com/undefinedhuman/sts-blog//commit/e66d6fc0a85306826b3d5617d0f21f8a00b6ed61))
+- add rendering for every article ([3085c23](https://github.com/undefinedhuman/sts-blog//commit/3085c23d4bbbb52f4907817e4935e3e4503d0b5d))
+- add basic button for adding articles ([f5d9800](https://github.com/undefinedhuman/sts-blog//commit/f5d9800b0b368eef06664ddcc8cf109f030580f0))
+- add submit form for new articles ([7961ebb](https://github.com/undefinedhuman/sts-blog//commit/7961ebb739878e9c71ec8f5a9face5e6c4f5ea88))
+- make articles expandable ([8e006b6](https://github.com/undefinedhuman/sts-blog//commit/8e006b6b59b87ca49cd28ceed19588728000d2d9))
+
+## Fixed
+- fix some bugs with the deploy ([01930f8](https://github.com/undefinedhuman/sts-blog//commit/01930f8458c9d1797d95cb4606be07a576627477))
+- fix http request endpoint handling ([712acf8](https://github.com/undefinedhuman/sts-blog//commit/712acf84b56205e8c50b4a8f7bf75b2127470b6a))
+- add id to article div container ([86f95cc](https://github.com/undefinedhuman/sts-blog//commit/86f95cc2725c13dc8c2c23efd4f5c6f24463b51f))
+- add http request for editing articles ([a6ace8e](https://github.com/undefinedhuman/sts-blog//commit/a6ace8e34b14673eeb95e288daf66a7630bdf46d))
+
+## Miscellaneous
+- add backend documentation file ([4b31f7f](https://github.com/undefinedhuman/sts-blog//commit/4b31f7fe145a40125ecf5fddb19eac703629bf2d))
+- add contribute file ([8849f95](https://github.com/undefinedhuman/sts-blog//commit/8849f95e705d59712c7ce5399237f22d8bcfd4d7))
+- Bump to 0.17.0 ([d10517a](https://github.com/undefinedhuman/sts-blog//commit/d10517a1015a2701d4a8d2aa6f431d4ef825556b))
+
 # Version 0.10.13 (Friday, May 1, 2020, 04:41 PM)
 
 ## Fixed
