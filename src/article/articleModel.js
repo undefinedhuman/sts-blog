@@ -1,5 +1,5 @@
-let mongoose = require("mongoose");
-let Schema = mongoose.Schema;
+let mongoose = require("mongoose")
+let Schema = mongoose.Schema
 
 let ArticleSchema = new Schema({
     title: {
@@ -14,8 +14,8 @@ let ArticleSchema = new Schema({
         type: Date,
         default: Date.now
     }
-});
+})
 
-let Article = mongoose.model('Article', ArticleSchema);
+let Article = mongoose.model('Article', ArticleSchema)
 
 module.exports = Article

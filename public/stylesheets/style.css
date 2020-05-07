@@ -1,3 +1,258 @@
+@charset "UTF-8";
+
+/* General */
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.75em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Navigation */
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 0 0 1rem;
+    background: white;
+    color: #aaaaaa;
+    line-height: 5rem;
+    font-size: 0.75em;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #333333;
+}
+
+.nav-responsive {
+    display: none;
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: 0;
+    right: 0;
+    background: white;
+}
+
+#nav-toggle {
+    position: absolute;
+    padding: 1rem;
+    left: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: #333333;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+}
+
+#nav-toggle span:before {
+    top: -10px;
+}
+
+#nav-toggle span:after {
+    bottom: -10px;
+}
+
+#nav-toggle.active span {
+    background-color: transparent;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+}
+
+#nav-toggle.active span:before {
+    transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+    transform: rotate(-45deg);
+}
+
+.navigation {
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    top: 0;
+    background: white;
+    z-index: 9999;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:    2px 2px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:         2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.logo {
+    position: absolute;
+    float: left;
+    line-height: 5rem;
+    font-size: 1.2em;
+}
+
+.logo a,
+.logo a:visited {
+    color: #333333;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 50rem) {
+    .nav-responsive {
+        display: block;
+    }
+    nav {
+        width: 100%;
+        padding: 5rem 0 1rem;
+    }
+    nav ul {
+        display: none;
+    }
+    nav ul li {
+        float: none;
+    }
+    nav ul li a {
+        padding: 1rem;
+        line-height: 1.2rem;
+    }
+    nav ul li ul li a {
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (min-width: 50rem) {
+    .nav-list {
+        display: block !important;
+    }
+}
+
+/* Articles */
+
+#root {
+    max-width: 50rem;
+    margin: 7rem auto;
+}
+
+h1 {
+    color: #dcdcdc;
+}
+
+.article {
+    background-color: white;
+    height: 14rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    font-size: 0.85em;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:    2px 2px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:         2px 2px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.article-expand {
+    overflow: auto;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    font-size: 0.85em;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:    2px 2px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:         2px 2px 2px rgba(0, 0, 0, 0.05);
+    cursor: default;
+}
+
+.article h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+}
+
+.article-information {
+    font-size: 0.6em;
+    color: #aaaaaa;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.article-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    font-size: 0.75em;
+    color: #8d8d8d;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.article-body-expand {
+    font-size: 0.75em;
+    color: #8d8d8d;
+    margin: 0.5rem 0;
+    cursor: default;
+}
+
+.add-button {
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    background-color: white;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+}
+
+.add-button:hover {
+    cursor: pointer;
+}
+
+.add-button a {
+    text-decoration: none;
+    color: #aaaaaa;
+    font-size: 2em;
+}
+
+.add-button a:hover {
+    color: #333333;
 }
