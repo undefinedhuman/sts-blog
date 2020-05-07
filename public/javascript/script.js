@@ -22,6 +22,10 @@ class Model {
     }
 
     editArticle(id, newTitle, newBody) {
+        httpRequest("PUT", "/api/articles/" + id + "/", "title=" + newTitle + "&body=" + newBody, (response) => {
+            const parsedResponse = JSON.parse(response);
+            alert(parsedResponse.message)
+        })
         this.articles = this.articles.map(article =>
             article.id === id ? { id: article.id, title: newTitle, body: newBody } : article
         )
@@ -111,7 +115,7 @@ class Controller {
 }
 
 function httpRequest(method, url, body, callback) {
-    let httpRequest = new XMLHttpRequest();
+    const httpRequest = new XMLHttpRequest();
     httpRequest.open(method, url, true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.onreadystatechange = () => {
