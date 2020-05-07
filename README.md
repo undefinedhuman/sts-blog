@@ -32,12 +32,14 @@
 
 ## Installation
 
-> This guideline assumes you already have Node.js and npm installed.
+> This guideline assumes you already have Node.js + npm and MongoDB (community server v4.2) installed
+> For more information have a look in the documentation
 
 ```sh
 git clone https://github.com/undefinedhuman/sts-blog.git
 cd sts-blog
 npm install
+git checkout dev (!important since the production database runs in a docker container)
 ``` 
 
 ## Usage
