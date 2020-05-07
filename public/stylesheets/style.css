@@ -102,9 +102,10 @@ nav ul li a:hover {
     height: 5rem;
     top: 0;
     background: white;
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow:    0 0 1px rgba(0, 0, 0, 0.06);
-    box-shadow:         0 0 1px rgba(0, 0, 0, 0.06);
+    z-index: 9999;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:    2px 2px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:         2px 2px 2px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -172,9 +173,9 @@ h1 {
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     font-size: 0.85em;
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow:    0 0 1px rgba(0, 0, 0, 0.06);
-    box-shadow:         0 0 1px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:    2px 2px 2px rgba(0, 0, 0, 0.05);
+    box-shadow:         2px 2px 2px rgba(0, 0, 0, 0.05);
 }
 
 .article h3 {
@@ -200,4 +201,24 @@ h1 {
     font-size: 0.75em;
     color: #8d8d8d;
     margin: 0.5rem 0;
+}
+
+.add-button {
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    color: #aaaaaa;
+    background-color: white;
+    border-radius: 2rem;
+    font-size: 1em;
+    border: none;
+    outline: none;
+}
+
+.add-button:hover {
+    color: #333333;
+    cursor: pointer;
 }
