@@ -67,6 +67,7 @@ class View {
         } else {
             articles.forEach(article => {
                 const articleDiv = this.createElement("div", "article")
+                articleDiv.id = article.id
 
                 const articleTitle = this.createElement("h3")
                 articleTitle.textContent = article.title
