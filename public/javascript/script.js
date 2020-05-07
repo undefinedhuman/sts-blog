@@ -44,15 +44,19 @@ class Model {
             id: article._id,
             title: article.title,
             body: article.body,
-            date: article.created
+            read: (article.body.split(" ").length / 200).toFixed(),
+            date: new Date(article.created.toString()).toLocaleDateString("en-US", { day: 'numeric', year: 'numeric', month: 'long' })
         }
         this.articles.push(newArticle)
     }
 
-    renderArticles(callback) {
+    bindRenderArticles(callback) {
         this.updateArticles = callback
     }
 
+    getArticle(id) {
+        return this.articles.filter(article => article.id === id);
+    }
 }
 
 class View {
@@ -61,8 +65,7 @@ class View {
     }
 
     render(articles) {
-        while (this.root.firstChild)
-            this.root.removeChild(this.root.firstChild)
+        this.clearArticles()
 
         if(articles.length === 0) {
             const p = this.createElement("p")
@@ -78,7 +81,7 @@ class View {
                 articleDiv.append(articleTitle)
 
                 const articleInformation = this.createElement("p", "article-information")
-                articleInformation.textContent = "6 January 2020 | 6min"
+                articleInformation.textContent = article.date + " | " + article.read + "min"
                 articleDiv.append(articleInformation)
 
                 const articleBody = this.createElement("p", "article-body")
@@ -99,6 +102,42 @@ class View {
     getElement(selector) {
         return document.querySelector(selector)
     }
+
+    bindExpandEvent(callback) {
+        this.root.addEventListener('click', e => {
+            if (e.target.className.startsWith("article")) {
+                if(e.target.className.startsWith("article-")) {
+                    callback(e.target.parentElement.id)
+                } else {
+                    callback(e.target.id)
+                }
+            }
+        })
+    }
+
+    renderArticle(article) {
+        this.clearArticles()
+        const articleDiv = this.createElement("div", "article-expand")
+
+        const articleTitle = this.createElement("h3")
+        articleTitle.textContent = article.title
+        articleDiv.append(articleTitle)
+
+        const articleInformation = this.createElement("p", "article-information")
+        articleInformation.textContent = article.date + " | " + article.read + "min"
+        articleDiv.append(articleInformation)
+
+        const articleBody = this.createElement("p", "article-body-expand")
+        articleBody.textContent = article.body
+        articleDiv.append(articleBody)
+
+        this.root.append(articleDiv)
+    }
+
+    clearArticles() {
+        while (this.root.firstChild)
+            this.root.removeChild(this.root.firstChild)
+    }
 }
 
 class Controller {
@@ -106,12 +145,21 @@ class Controller {
         this.model = model
         this.view = view
 
-        this.model.renderArticles(this.render)
+        this.model.bindRenderArticles(this.renderArticles)
+        this.view.bindExpandEvent(this.handleExpandArticle)
     }
 
-    render = articles => {
+    renderArticles = articles => {
         this.view.render(articles)
     }
+
+    handleExpandArticle = id => {
+        const articles = this.model.getArticle(id)
+        if (articles.length > 0)
+            this.view.renderArticle(articles[0])
+
+    }
+
 }
 
 function httpRequest(method, url, body, callback) {
