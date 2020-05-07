@@ -53,37 +53,42 @@ class Model {
 
 class View {
     constructor() {
-        this.root = this.getElement('#root')
-
-        this.articlesList = this.createElement('ul')
-
-        this.root.append(this.articlesList)
+        this.root = this.getElement("#root")
     }
 
     render(articles) {
-        while (this.articlesList.firstChild)
-            this.articlesList.removeChild(this.articlesList.firstChild)
+        while (this.root.firstChild)
+            this.root.removeChild(this.root.firstChild)
 
         if(articles.length === 0) {
-            const p = this.createElement('p')
+            const p = this.createElement("p")
             p.textContent = "There aren't any articles in this blog!"
-            this.articlesList.append(p)
+            this.root.append(p)
         } else {
             articles.forEach(article => {
-                const li = this.createElement('li')
-                li.id = article.id
+                const articleDiv = this.createElement("div", "article")
 
-                const title = this.createElement("h2")
-                title.textContent = article.title
-                li.append(title)
+                const articleTitle = this.createElement("h3")
+                articleTitle.textContent = article.title
+                articleDiv.append(articleTitle)
 
-                this.articlesList.append(li)
+                const articleInformation = this.createElement("p", "article-information")
+                articleInformation.textContent = "6 January 2020 | 6min | STS"
+                articleDiv.append(articleInformation)
+
+                const articleBody = this.createElement("p", "article-body")
+                articleBody.textContent = article.body
+                articleDiv.append(articleBody)
+
+                this.root.append(articleDiv)
             })
         }
     }
 
-    createElement(tag) {
-        return document.createElement(tag)
+    createElement(tag, cssClass) {
+        const element = document.createElement(tag)
+        if (cssClass) element.classList.add(cssClass)
+        return element
     }
 
     getElement(selector) {
@@ -107,7 +112,7 @@ class Controller {
 function httpRequest(method, url, body, callback) {
     let httpRequest = new XMLHttpRequest();
     httpRequest.open(method, url, true);
-    httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.onreadystatechange = () => {
         if (httpRequest.readyState === 4 && httpRequest.status === 200)
             callback(httpRequest.responseText);
