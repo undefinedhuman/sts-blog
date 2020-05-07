@@ -23,7 +23,7 @@
 > A private blog in which I document the results of my research on stock markets and various investment strategies.
 
 ### [Homepage](https://github.com/undefinedhuman/sts-blog)
-### [View the Demo](https://github.com/undefinedhuman/sts-blog)
+### [View the Demo](http://144.91.69.99:3000/index.html)
 
 ## Prerequisites
 
@@ -38,12 +38,12 @@
 git clone https://github.com/undefinedhuman/sts-blog.git
 cd sts-blog
 npm install
-```
+``` 
 
 ## Usage
 
 ```sh
-npm run start
+npm run dev
 ```
 
 ## Testing
