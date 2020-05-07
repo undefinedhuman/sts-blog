@@ -28,7 +28,7 @@ class Model {
     }
 
     deleteArticle(id) {
-        httpRequest("DELETE", "http://localhost:3000/api/articles/" + id + "/", null, (response) => {
+        httpRequest("DELETE", "/api/articles/" + id + "/", null, (response) => {
             const parsedResponse = JSON.parse(response);
             alert(parsedResponse.message)
         })
@@ -74,7 +74,7 @@ class View {
                 articleDiv.append(articleTitle)
 
                 const articleInformation = this.createElement("p", "article-information")
-                articleInformation.textContent = "6 January 2020 | 6min | STS"
+                articleInformation.textContent = "6 January 2020 | 6min"
                 articleDiv.append(articleInformation)
 
                 const articleBody = this.createElement("p", "article-body")

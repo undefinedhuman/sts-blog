@@ -210,15 +210,22 @@ h1 {
     bottom: 2rem;
     right: 2rem;
     z-index: 9999;
-    color: #aaaaaa;
     background-color: white;
     border-radius: 2rem;
-    font-size: 1em;
     border: none;
     outline: none;
 }
 
 .add-button:hover {
-    color: #333333;
     cursor: pointer;
+}
+
+.add-button a {
+    text-decoration: none;
+    color: #aaaaaa;
+    font-size: 2em;
+}
+
+.add-button a:hover {
+    color: #333333;
 }
