@@ -9,7 +9,7 @@
     "start": "node app.js",
     "dev": "nodemon -q app.js",
     "test": "jest --config=jest.json --watch --coverage",
-    "test-coverage": "jest --config=jest.json --detectOpenHandles --coverage && cat ./coverage/lcov.info | coveralls",
+    "test-coverage": "jest --config=jest.json --forceExit --coverage && cat ./coverage/lcov.info | coveralls",
     "version": "echo $npm_package_version",
     "changelog": "node changelog.js"
   },
