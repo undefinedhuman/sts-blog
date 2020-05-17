@@ -13,7 +13,7 @@ describe("Integration test for article endpoints", () => {
     })
 
     it('Test post request', async done => {
-        const response = await request.post('/api/articles')
+        const response = await request.post('/api/articles/')
             .send({
                 title: 'Test title',
                 body: 'Test body'
@@ -27,13 +27,41 @@ describe("Integration test for article endpoints", () => {
         done()
     })
 
-    it('Test get request', async done => {
-        await request.post('/api/articles').send({ title: 'Test title', body: 'Test body' })
-        const response = await request.get('/api/articles/').send()
-        expect(response.status).toBe(200)
-        expect(response.body.length).toBe(1)
-        testArticle(response.body[0])
-        done()
+    describe("Get Requests", () => {
+
+        beforeEach(async () => {
+            for(let i = 0; i < 5; i++) {
+                await new Article({
+                    _id: new ObjectID("5eb457e491bb49267280eb5" + i),
+                    title: "Test title",
+                    body: "Test body",
+                }).save()
+            }
+        })
+
+        it('Test get request', async done => {
+            const response = await request.get('/api/articles/').send()
+            expect(response.status).toBe(200)
+            expect(response.body.length).toBe(5)
+            for(let i = 0; i < 5; i++)
+                testArticle(response.body[i])
+            done()
+        })
+
+        it('Test get request of article with id', async done => {
+            for(let i = 0; i < 5; i++) {
+                const response = await request.get(`/api/articles/5eb457e491bb49267280eb5${i}`).send()
+                expect(response.status).toBe(200)
+                expect(response.body._id).toBe(`5eb457e491bb49267280eb5${i}`)
+                testArticle(response.body)
+                done()
+            }
+        })
+
+        afterEach(async () => {
+            await removeAllCollections()
+        })
+
     })
 
     afterEach(async () => {
@@ -48,11 +76,11 @@ describe("Integration test for article endpoints", () => {
             })
     })
 
-    function testArticle(response) {
-        expect(response._id).toBeTruthy()
-        expect(response.title).toBe("Test title")
-        expect(response.body).toBe("Test body")
-        expect(response.created).toBeTruthy()
+    function testArticle(article) {
+        expect(article._id).toBeTruthy()
+        expect(article.title).toBe("Test title")
+        expect(article.body).toBe("Test body")
+        expect(article.created).toBeTruthy()
     }
 
     async function removeAllCollections () {

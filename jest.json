@@ -5,6 +5,7 @@
     "/node_modules/"
   ],
   "collectCoverageFrom" : [
-    "src/**/*.js"
+    "src/**/*.js",
+    "!**/node_modules/**"
   ]
 }
