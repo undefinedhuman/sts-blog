@@ -30,7 +30,7 @@ module.exports.updateArticle = (req, res) => {
 };
 
 module.exports.deleteArticle = (req, res) => {
-    Article.remove({ _id: req.params.articleID }, (err) => {
+    Article.deleteOne({ _id: req.params.articleID }, (err) => {
         if (err) res.send(err);
         res.json({
             message: `Article (ID: ${req.params.articleID}) deleted successfully!`

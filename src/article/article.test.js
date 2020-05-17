@@ -2,14 +2,23 @@ const app = require('../server')
 const supertest = require('supertest')
 const request = supertest(app)
 const mongoose = require('mongoose')
+const MockMongoose = require('mock-mongoose').MockMongoose
+const mockMongoose = new MockMongoose(mongoose)
 const ObjectID = mongoose.Types.ObjectId
 const Article = require('./articleModel')
+const useDatabase = true
 
 describe("Integration test for article endpoints", () => {
 
     beforeAll(async () => {
-        mongoose.connect('mongodb://localhost:27017/articles_test', { useNewUrlParser: true, useUnifiedTopology: true })
+        if(useDatabase)
+            mongoose.connect('mongodb://localhost:27017/articles_test', { useNewUrlParser: true, useUnifiedTopology: true })
                 .then(() => { console.log("Connection to test database successful!") })
+        else
+            mockMongoose.prepareStorage().then(() => {
+                mongoose.connect('mongodb://localhost:27017/articles_test')
+                    .then(() => { console.log("Connection to test database successful!") })
+            })
     })
 
     it('Test post request', async done => {
@@ -27,7 +36,7 @@ describe("Integration test for article endpoints", () => {
         done()
     })
 
-    describe("Get Requests", () => {
+    describe("Tests that require pre data in the database", () => {
 
         beforeEach(async () => {
             for(let i = 0; i < 5; i++) {
@@ -39,7 +48,7 @@ describe("Integration test for article endpoints", () => {
             }
         })
 
-        it('Test get request', async done => {
+        it('Get /api/articles/', async done => {
             const response = await request.get('/api/articles/').send()
             expect(response.status).toBe(200)
             expect(response.body.length).toBe(5)
@@ -48,14 +57,31 @@ describe("Integration test for article endpoints", () => {
             done()
         })
 
-        it('Test get request of article with id', async done => {
+        it('Get /api/articles/:articleID', async done => {
             for(let i = 0; i < 5; i++) {
-                const response = await request.get(`/api/articles/5eb457e491bb49267280eb5${i}`).send()
+                const response = await request.get(`/api/articles/5eb457e491bb49267280eb5${i}/`).send()
                 expect(response.status).toBe(200)
-                expect(response.body._id).toBe(`5eb457e491bb49267280eb5${i}`)
                 testArticle(response.body)
-                done()
             }
+            done()
+        })
+
+        it('Put /api/articles/:articleID', async done => {
+            let response = await request.put(`/api/articles/5eb457e491bb49267280eb50/`).send({
+                title: "Test title 2",
+                body: "Test body 2"
+            })
+            expect(response.status).toBe(200)
+            expect(response.body.title).toBeTruthy()
+            expect(response.body.body).toBeTruthy()
+            done()
+        })
+
+        it('Delete /api/articles/:articleID', async done => {
+            let response = await request.delete(`/api/articles/5eb457e491bb49267280eb50/`).send()
+            expect(response.status).toBe(200)
+            expect(await Article.findOne({ _id: new ObjectID('5eb457e491bb49267280eb50') })).toBeNull()
+            done()
         })
 
         afterEach(async () => {
