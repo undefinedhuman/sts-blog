@@ -90,6 +90,13 @@ describe("Integration test for article endpoints", () => {
 
     })
 
+    it('Test error code', async done => {
+        const response = await request.get('/api/article/').send()
+        expect(response.status).toBe(404)
+        expect(response.body.message).toBe("Sorry can't find undefined!")
+        done()
+    })
+
     afterEach(async () => {
         await removeAllCollections()
     })
