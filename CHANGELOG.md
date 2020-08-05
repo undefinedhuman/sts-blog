@@ -1,3 +1,16 @@
+# Version 0.17.1 (Wednesday, Aug 5, 2020, 06:51 PM)
+
+## Changed
+- bump npm from 6.14.4 to 6.14.6 ([771513d](https://github.com/undefinedhuman/sts-blog//commit/771513db40e3e49036c6005c9e59dbf4e003e24c))
+
+## Fixed
+- security fix ([8551471](https://github.com/undefinedhuman/sts-blog//commit/8551471ade9fdf5f2d7113e3aab181caa9172bbf))
+
+## Miscellaneous
+- change demo url ([8f020c8](https://github.com/undefinedhuman/sts-blog//commit/8f020c802c09483f8bd2a8d918a100d2fb4edc36))
+- update installation guidelines ([631a8a8](https://github.com/undefinedhuman/sts-blog//commit/631a8a811f7edffee211e9c61f0275b82281eeb3))
+- Bump to 0.17.1 ([107dbb6](https://github.com/undefinedhuman/sts-blog//commit/107dbb6d007644fabc6afe45a143a18d2a8c83cf))
+
 # Version 0.17.0 (Thursday, May 7, 2020, 07:13 PM)
 
 ## Added
