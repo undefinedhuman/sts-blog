@@ -3,6 +3,9 @@ const fs = require("fs");
 
 const repo_link = "https://github.com/undefinedhuman/sts-blog/"
 
+const tagList = child_process.execSync(`git tag -l`).toString("utf-8").split("\n")
+if(tagList.length === 0) console.log("No tags found, add a the first tag by hand.")
+
 const commitLog = child_process
     .execSync(`git log ${child_process.execSync('git describe --tags `git rev-list --tags --max-count=1`').toString('utf-8').replace("\n", "")}...HEAD --reverse --pretty=format:%H---SPLIT---%h---SPLIT---%s---COMMIT---`)
     .toString('utf-8')
